@@ -6,6 +6,7 @@ import 'package:recollar/events/login_event.dart';
 import 'package:recollar/repositories/login_repository.dart';
 import 'package:recollar/screens/login/login.dart';
 import 'package:recollar/screens/signup/signup.dart';
+import 'package:recollar/screens/splashscreen/splash_screen.dart';
 import 'package:recollar/state/login_state.dart';
 import 'package:recollar/util/configuration.dart';
 
@@ -33,15 +34,7 @@ class _InitialMainState extends State<InitialMain> {
               return const Signup();
             }
             if(state is LoginInitial){
-              return Container(
-                color: color2,
-                child: const Center(
-                  child: SpinKitFadingCube(
-                      color: Colors.white,
-                      size: 30
-                  ) ,
-                ),
-              );
+              return SplashScreen();
             }
             else{
               return const Login();
